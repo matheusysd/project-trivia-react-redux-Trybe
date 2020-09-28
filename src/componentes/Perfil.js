@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const Perfil = ({ nome, imagem, pontos }) => (
-  <div className="fixed-top row profile">
+  <div className="fixed-top row profile d-flex align-items-center">
     <div className="col">
       <img
         src={`https://www.gravatar.com/avatar/${imagem}`}
