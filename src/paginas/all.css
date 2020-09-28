@@ -18,4 +18,5 @@ html, body{
 
 .profile {
   background-color: #0fa36b;
+  border: solid 1px black;
 }

@@ -20,6 +20,10 @@ class PaginaInicial extends Component {
     this.getData = this.getData.bind(this);
   }
 
+  componentDidMount() {
+    document.title = 'TrybeTrivia';
+  }
+
   getData() {
     const { saveData } = this.props;
     const { nome, email } = this.state;
@@ -57,8 +61,7 @@ class PaginaInicial extends Component {
             />
           </Link>
           <p className="mt-5 mb-3 text-muted">
-            Desenvolvido por{' '}
-            <a href="https://www.linkedin.com/in/matheusysd/">Matheus Domingos</a>.
+            Desenvolvido por <a href="https://www.linkedin.com/in/matheusysd/">Matheus Domingos</a>.
           </p>
         </form>
       </div>

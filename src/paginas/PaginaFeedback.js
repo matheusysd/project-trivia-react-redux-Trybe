@@ -8,7 +8,7 @@ import Botao from '../componentes/Botao';
 const PaginaFeedback = ({ pontuacao, acertos }) => (
   <div className="container">
     <Perfil />
-    <h1 data-testid="feedback-text">{acertos >= 3 ? 'Mandou bem!' : 'Não desanime! Tente novamente!'}</h1>
+    <h1 data-testid="feedback-text">{acertos >= 3 ? 'Mandou bem!' : 'Não desanime! Tente novamente  !'}</h1>
     {acertos > 0 ? (
       <p data-testid="feedback-total-question">{`Você acertou ${acertos} ${
         acertos > 1 ? 'questões' : 'questão'
