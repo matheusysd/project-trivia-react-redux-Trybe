@@ -68,26 +68,30 @@ class PaginaJogo extends Component {
     const { index, click, renderLink, timer } = this.state;
     if (!questions[index]) return <div>Loading...</div>;
     return (
-      <div className="container">
+      <>
         <Perfil />
-        <Pergunta currQuestion={questions[index]} />
-        <Respostas
-          correctAnswer={questions[index].correct_answer}
-          incorrectAnswers={questions[index].incorrect_answers}
-          condition={click || (timer === 0)}
-          onClick={this.clickouNoBotao}
-          difficulty={questions[index].difficulty}
-        />
-        <Botao
-          nameClass="btn btn-lg btn-success btn-block"
-          show={click || (timer === 0)}
-          texto="PRÓXIMA"
-          onClick={this.incrementQuestionIndex}
-          dataTestId="btn-next"
-          renderLink={renderLink}
-        />
-        <div>Tempo: {timer}</div>
-      </div>
+        <div className="container">
+          <div>TEMPO: {timer}</div>
+          <Pergunta currQuestion={questions[index]} />
+          <div className="container">
+            <Respostas
+              correctAnswer={questions[index].correct_answer}
+              incorrectAnswers={questions[index].incorrect_answers}
+              condition={click || timer === 0}
+              onClick={this.clickouNoBotao}
+              difficulty={questions[index].difficulty}
+            />
+            <Botao
+              nameClass="btn btn-lg btn-success btn-block"
+              show={click || timer === 0}
+              texto="PRÓXIMA"
+              onClick={this.incrementQuestionIndex}
+              dataTestId="btn-next"
+              renderLink={renderLink}
+            />
+          </div>
+        </div>
+      </>
     );
   }
 }

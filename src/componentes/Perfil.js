@@ -3,22 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const Perfil = ({ nome, imagem, pontos }) => (
-  <div className="container">
-    <div className="row">
-      <div className="col">
-        <img
-          src={`https://www.gravatar.com/avatar/${imagem}`}
-          alt="avatar do jogador"
-          width="72"
-          data-testid="header-profile-picture"
-        />
-        <span data-testid="header-player-name" className="col-6">
-          {nome}{' '}
-        </span>
-        <span data-testid="header-score" className="col">
-          Pontos: {pontos}{' '}
-        </span>
-      </div>
+  <div className="navbar navbar-light fixed-top profile row">
+    <div className="col">
+      <img
+        src={`https://www.gravatar.com/avatar/${imagem}`}
+        alt="avatar do jogador"
+        width="72"
+        data-testid="header-profile-picture"
+      />
+    </div>
+    <div className="col-6">
+      <span data-testid="header-player-name">{nome} </span>
+    </div>
+    <div className="col">
+      <span data-testid="header-score">Pontos: {pontos} </span>
     </div>
   </div>
 );

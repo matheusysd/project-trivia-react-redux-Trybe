@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Respostas = (props) => {
   const { correctAnswer, incorrectAnswers, condition, onClick, difficulty } = props;
+  const decodedCorrect = decodeURIComponent(correctAnswer);
   return (
     <div>
       <button
@@ -13,7 +14,7 @@ const Respostas = (props) => {
         onClick={() => onClick(true, difficulty)}
         disabled={condition}
       >
-        {correctAnswer}
+        {decodedCorrect}
       </button>
       {incorrectAnswers.map((incorrectAnswer, index) => (
         <button
@@ -25,7 +26,7 @@ const Respostas = (props) => {
           onClick={() => onClick(false)}
           disabled={condition}
         >
-          {incorrectAnswer}
+          {decodeURIComponent(incorrectAnswer)}
         </button>
       ))}
     </div>

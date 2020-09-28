@@ -1,3 +1,9 @@
+body {
+  background-image: url('./assets/2316767.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
 }
