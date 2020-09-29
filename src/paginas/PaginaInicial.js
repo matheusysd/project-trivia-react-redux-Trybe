@@ -8,6 +8,7 @@ import Input from '../componentes/Inicial/Input';
 import Botao from '../componentes/Botao';
 import './login.css';
 import trybeLogo from '../assets/trybeLogo.png';
+import { fetchCategories } from '../redux/actions/apiActions';
 
 class PaginaInicial extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class PaginaInicial extends Component {
 
   componentDidMount() {
     document.title = 'TrybeTrivia';
+    this.props.getCategories();
   }
 
   getData() {
@@ -43,7 +45,7 @@ class PaginaInicial extends Component {
           <h1 className="h3 mb-3 font-weight-normal">Faça seu login</h1>
           <Input name="nome" onChange={this.changeHandler} dataTestId="input-player-name" />
           <Input name="email" onChange={this.changeHandler} dataTestId="input-gravatar-email" />
-          <Link to="/game" className="text-link">
+          <Link to="/game" className="text-decoration-none">
             <Botao
               nameClass="btn btn-lg btn-success btn-block"
               texto="Jogar"
@@ -53,7 +55,7 @@ class PaginaInicial extends Component {
               type="submit"
             />
           </Link>
-          <Link to="/settings" className="text-link">
+          <Link to="/settings" className="text-decoration-none">
             <Botao
               texto="Configuracoes"
               dataTestId="btn-settings"
@@ -71,6 +73,7 @@ class PaginaInicial extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   saveData: (name, email) => dispatch(savePlayerData(name, email)),
+  getCategories: () => dispatch(fetchCategories()),
 });
 
 PaginaInicial.propTypes = {

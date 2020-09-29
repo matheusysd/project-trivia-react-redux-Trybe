@@ -17,14 +17,14 @@ const PaginaFeedback = ({ pontuacao, acertos }) => (
       <p data-testid="feedback-total-question">Você não acertou nenhuma questão.</p>
     )}
     <p data-testid="feedback-total-score">{`Você fez ${pontuacao} pontos.`}</p>
-    <Link to="/" className="text-link">
+    <Link to="/" className="text-decoration-none">
       <Botao
         texto="Jogar Novamente"
         dataTestId="btn-play-again"
         nameClass="btn btn-lg btn-success btn-block"
       />
     </Link>
-    <Link to="/ranking" className="text-link">
+    <Link to="/ranking" className="text-decoration-none">
       <Botao
         texto="Ver Ranking"
         dataTestId="btn-ranking"

@@ -23,9 +23,9 @@ class PaginaJogo extends Component {
   }
 
   componentDidMount() {
-    const { getToken, getTrivia } = this.props;
+    const { getToken, getTrivia, category, difficulty, type } = this.props;
     getToken();
-    getTrivia();
+    getTrivia(category, difficulty, type);
     this.playTimer();
   }
 
@@ -114,11 +114,14 @@ PaginaJogo.propTypes = {
 
 const mapStateToProps = (state) => ({
   questions: state.dataReducer.trivia,
+  category: state.dataReducer.selectedCategory,
+  difficulty: state.dataReducer.selectedDifficulty,
+  type: state.dataReducer.selectedType,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getToken: () => dispatch(fetchToken()),
-  getTrivia: () => dispatch(fetchTrivia()),
+  getTrivia: (category, difficulty, type) => dispatch(fetchTrivia(category, difficulty, type)),
   addScore: (score) => dispatch(correctAnswer(score)),
 });
 

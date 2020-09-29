@@ -3,6 +3,8 @@ import {
   RECEIVE_TOKEN,
   REQUEST_TRIVIA,
   RECEIVE_TRIVIA,
+  REQUEST_CATEGORIES,
+  RECEIVE_CATEGORIES,
 } from '../actions/apiActions';
 import addInfo from '../../util/localStorage';
 
@@ -10,6 +12,10 @@ const INITIAL_STATE = {
   isFetching: false,
   token: {},
   trivia: {},
+  categories: [{ id: '', name: 'Any Category' }],
+  selectedCategory: '',
+  selectedType: '',
+  selectedDifficulty: '',
 };
 
 const dataReducer = (state = INITIAL_STATE, action) => {
@@ -36,6 +42,17 @@ const dataReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isFetching: false,
         trivia: action.trivia,
+      };
+    case REQUEST_CATEGORIES:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case RECEIVE_CATEGORIES:
+      return {
+        ...state,
+        isFetching: false,
+        categories: [...state.categories, ...action.categories.trivia_categories],
       };
     default:
       return state;

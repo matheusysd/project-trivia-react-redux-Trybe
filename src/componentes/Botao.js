@@ -27,7 +27,7 @@ const Botao = ({
           </button>
         )}
         {renderLink && (
-          <Link data-testid="btn-next" to="/feedback" className="text-link">
+          <Link data-testid="btn-next" to="/feedback" className="text-decoration-none">
             <button className="btn btn-lg btn-success btn-block" type="button">
               PRÓXIMA
             </button>
