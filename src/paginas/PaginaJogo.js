@@ -110,6 +110,9 @@ PaginaJogo.propTypes = {
   getToken: PropTypes.func.isRequired,
   getTrivia: PropTypes.func.isRequired,
   addScore: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
+  difficulty: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({

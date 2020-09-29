@@ -6,6 +6,9 @@ export const REQUEST_TRIVIA = 'REQUEST_TRIVIA';
 export const RECEIVE_TRIVIA = 'RECEIVE_TRIVIA';
 export const REQUEST_CATEGORIES = 'REQUEST_CATEGORIES';
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
+export const SELECT_CATEGORY = 'SELECT_CATEGORY';
+export const SELECT_DIFFICULTY = 'SELECT_DIFFICULTY';
+export const SELECT_TYPE = 'SELECT_TYPE';
 
 const requestToken = () => ({
   type: REQUEST_TOKEN,
@@ -34,6 +37,12 @@ const receiveCategories = (categories) => ({
   categories,
 });
 
+const selectCategory = (category) => ({ type: SELECT_CATEGORY, category });
+
+const selectDifficulty = (difficulty) => ({ type: SELECT_DIFFICULTY, difficulty });
+
+const selectType = (typeQ) => ({ type: SELECT_TYPE, typeQ });
+
 function fetchCategories() {
   return (dispatch) => {
     dispatch(requestCategories());
@@ -51,8 +60,10 @@ function fetchToken() {
 function fetchTrivia(category, difficulty, type) {
   return (dispatch) => {
     dispatch(requestTrivia());
-    return getTrivia(category, difficulty, type).then((data) => dispatch(receiveTrivia(data.results)));
+    return getTrivia(category, difficulty, type).then((data) =>
+      dispatch(receiveTrivia(data.results)),
+    );
   };
 }
 
-export { fetchToken, fetchTrivia, fetchCategories };
+export { fetchToken, fetchTrivia, fetchCategories, selectCategory, selectDifficulty, selectType };

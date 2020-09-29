@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import PropTypes, { object } from 'prop-types';
 import { MD5 } from 'crypto-js';
 import { savePlayerData } from '../redux/actions/userAction';
 import Input from '../componentes/Inicial/Input';
@@ -23,7 +23,8 @@ class PaginaInicial extends Component {
 
   componentDidMount() {
     document.title = 'TrybeTrivia';
-    this.props.getCategories();
+    const { getCategories, categories } = this.props;
+    if (categories.length === 1) getCategories();
   }
 
   getData() {
@@ -76,8 +77,14 @@ const mapDispatchToProps = (dispatch) => ({
   getCategories: () => dispatch(fetchCategories()),
 });
 
+const mapStateToProps = (state) => ({
+  categories: state.dataReducer.categories,
+});
+
 PaginaInicial.propTypes = {
   saveData: PropTypes.func.isRequired,
+  getCategories: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(object).isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(PaginaInicial);
+export default connect(mapStateToProps, mapDispatchToProps)(PaginaInicial);

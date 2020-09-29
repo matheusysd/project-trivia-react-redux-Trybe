@@ -4,7 +4,7 @@ import {
   REQUEST_TRIVIA,
   RECEIVE_TRIVIA,
   REQUEST_CATEGORIES,
-  RECEIVE_CATEGORIES,
+  RECEIVE_CATEGORIES, SELECT_CATEGORY, SELECT_DIFFICULTY, SELECT_TYPE
 } from '../actions/apiActions';
 import addInfo from '../../util/localStorage';
 
@@ -54,6 +54,12 @@ const dataReducer = (state = INITIAL_STATE, action) => {
         isFetching: false,
         categories: [...state.categories, ...action.categories.trivia_categories],
       };
+    case SELECT_CATEGORY:
+      return{...state, selectedCategory: action.category};
+    case SELECT_DIFFICULTY:
+      return{...state, selectedDifficulty: action.difficulty};
+    case SELECT_TYPE:
+      return{...state, selectedType: action.typeQ};
     default:
       return state;
   }
