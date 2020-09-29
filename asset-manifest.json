@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/project-trivia-redux-Trybe/static/css/main.81a16442.chunk.css",
+    "main.js": "/project-trivia-redux-Trybe/static/js/main.58b9fc62.chunk.js",
+    "main.js.map": "/project-trivia-redux-Trybe/static/js/main.58b9fc62.chunk.js.map",
+    "runtime-main.js": "/project-trivia-redux-Trybe/static/js/runtime-main.593b55a2.js",
+    "runtime-main.js.map": "/project-trivia-redux-Trybe/static/js/runtime-main.593b55a2.js.map",
+    "static/css/2.c31a3e37.chunk.css": "/project-trivia-redux-Trybe/static/css/2.c31a3e37.chunk.css",
+    "static/js/2.8270ab59.chunk.js": "/project-trivia-redux-Trybe/static/js/2.8270ab59.chunk.js",
+    "static/js/2.8270ab59.chunk.js.map": "/project-trivia-redux-Trybe/static/js/2.8270ab59.chunk.js.map",
+    "index.html": "/project-trivia-redux-Trybe/index.html",
+    "precache-manifest.45c88b2427e0792fd1719b32d9c2e2fd.js": "/project-trivia-redux-Trybe/precache-manifest.45c88b2427e0792fd1719b32d9c2e2fd.js",
+    "service-worker.js": "/project-trivia-redux-Trybe/service-worker.js",
+    "static/css/2.c31a3e37.chunk.css.map": "/project-trivia-redux-Trybe/static/css/2.c31a3e37.chunk.css.map",
+    "static/css/main.81a16442.chunk.css.map": "/project-trivia-redux-Trybe/static/css/main.81a16442.chunk.css.map",
+    "static/js/2.8270ab59.chunk.js.LICENSE": "/project-trivia-redux-Trybe/static/js/2.8270ab59.chunk.js.LICENSE",
+    "static/media/App.css": "/project-trivia-redux-Trybe/static/media/2316767.943ba04b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.593b55a2.js",
+    "static/css/2.c31a3e37.chunk.css",
+    "static/js/2.8270ab59.chunk.js",
+    "static/css/main.81a16442.chunk.css",
+    "static/js/main.58b9fc62.chunk.js"
+  ]
+}
